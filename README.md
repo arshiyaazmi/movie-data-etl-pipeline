@@ -17,23 +17,21 @@ The pipeline extracts movie and rating data from CSV files, cleans and transform
 
 ### Workflow Diagram
 
-MovieLens CSV Files
-        |
-        v
-Extract and Transform
-(Python + pandas)
-        |
-        v
-Enrich Movie Metadata
-(OMDb API + JSON Cache)
-        |
-        v
-Load into MySQL
-(movies, genres, ratings)
-        |
-        v
-SQL Analysis
-(Ratings, Genres, Directors, Release Years)
+```mermaid
+flowchart TD
+    A["MovieLens Dataset<br/>movies.csv and ratings.csv"]
+    B["Extract and Transform<br/>Python and pandas"]
+    C["Enrich Movie Metadata<br/>OMDb API"]
+    D[("JSON Cache")]
+    E[("MySQL Database<br/>movies, genres, ratings")]
+    F["SQL Analysis<br/>Ratings, Genres, Directors, Years"]
+
+    A --> B
+    B --> C
+    C <--> D
+    C --> E
+    E --> F
+```
 
 ## Technologies
 
