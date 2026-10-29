@@ -82,8 +82,25 @@ This project uses the **MovieLens Latest Small** dataset.
 
 - `movies.csv` contains movie IDs, titles, and genres.
 - `ratings.csv` contains user IDs, movie IDs, ratings, and timestamps.
+- 
+### Downloading the Dataset
 
-The ETL script expects these files in the `ml-latest-small` directory.
+Download the MovieLens Latest Small dataset from the [official GroupLens website](https://files.grouplens.org/datasets/movielens/ml-latest-small.zip).
+1. Download and extract the ZIP file into the project root directory.
+2. Ensure that the `ml-latest-small` folder contains `movies.csv` and `ratings.csv`.
+
+The expected dataset structure is:
+```text
+ml-latest-small/
+├── movies.csv
+├── ratings.csv
+├── links.csv
+├── tags.csv
+└── README.txt
+```
+
+The pipeline uses `movies.csv` and `ratings.csv`. The remaining files are part of the original dataset but are not required for this project.
+
 
 ## Database Design
 
