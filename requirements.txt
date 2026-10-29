@@ -1,0 +1,13 @@
+# Python dependencies for the MovieLens ETL project
+
+# Data processing
+pandas
+
+# API requests
+requests
+
+# MySQL database connection
+mysql-connector-python
+
+# Environment variable management
+python-dotenv
