@@ -399,9 +399,5 @@ def main():
 
     print("\nFull MovieLens dataset loading completed.")
 
-
-
-
-
 if __name__ == "__main__":
     main()
