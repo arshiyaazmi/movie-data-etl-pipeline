@@ -19,19 +19,27 @@ The pipeline extracts movie and rating data from CSV files, cleans and transform
 
 ```mermaid
 flowchart TD
-    A["MovieLens Dataset<br/>movies.csv and ratings.csv"]
-    B["Extract and Transform<br/>Python and pandas"]
-    C["Enrich Movie Metadata<br/>OMDb API"]
-    D[("JSON Cache")]
-    E[("MySQL Database<br/>movies, genres, ratings")]
-    F["SQL Analysis<br/>Ratings, Genres, Directors, Years"]
+    A["MovieLens Dataset"]
+    A --> B["movies.csv"]
+    A --> C["ratings.csv"]
 
-    A --> B
-    B --> C
-    C <--> D
-    C --> E
-    E --> F
+    B --> D["Extract & Transform<br/>(Python, pandas)"]
+    C --> D
+
+    D --> E["Enrich Movie Metadata<br/>(OMDb API)"]
+    E <--> F["JSON Cache"]
+
+    E --> G[("MySQL Database")]
+    G --> H["movies"]
+    G --> I["genres"]
+    G --> J["ratings"]
+
+    H --> K["SQL Analysis"]
+    I --> K
+    J --> K
 ```
+
+
 
 ## Technologies
 
