@@ -1,5 +1,4 @@
-
--- Select the database for this assignment.
+-- Create database
 CREATE DATABASE IF NOT EXISTS movie_data;
 USE movie_data;
 
