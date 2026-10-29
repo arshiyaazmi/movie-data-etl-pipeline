@@ -14,6 +14,24 @@ The pipeline extracts movie and rating data from CSV files, cleans and transform
 4. **Load** — Insert or update records in MySQL using duplicate-safe database operations.
 5. **Analyze** — Run SQL queries to explore movie ratings, genres, directors, and release years.
 
+   ### Workflow Diagram
+
+```mermaid
+flowchart TD
+    A["MovieLens Dataset<br/>movies.csv and ratings.csv"]
+    B["Extract and Transform<br/>Python and pandas"]
+    C["Enrich Movie Metadata<br/>OMDb API"]
+    D["JSON Cache<br/>Reuse previously retrieved results"]
+    E["Load into MySQL<br/>movies, genres, ratings"]
+    F["SQL Analysis<br/>Ratings, Genres, Directors, Release Years"]
+
+    A --> B
+    B --> C
+    C <--> D
+    C --> E
+    E --> F
+```
+
 ## Technologies
 
 - **Python** — ETL logic
